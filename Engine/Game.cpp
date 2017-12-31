@@ -18,8 +18,13 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	snk.UpdateSnake(gfx,wnd.kbd);
+	snk2.UpdateSnake(gfx, wnd.kbd);
+	
 }
 
 void Game::ComposeFrame()
 {
+	
+
 }

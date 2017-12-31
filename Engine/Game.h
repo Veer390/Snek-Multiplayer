@@ -3,6 +3,7 @@
 #include "Keyboard.h"
 #include "Mouse.h"
 #include "Graphics.h"
+#include "Snek.h"
 
 class Game
 {
@@ -16,11 +17,16 @@ private:
 	void UpdateModel();
 	/********************************/
 	/*  User Functions              */
+
+
 	/********************************/
 private:
 	MainWindow& wnd;
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+
+	snake snk = snake(1), snk2 = snake(2);
+
 	/********************************/
 };
