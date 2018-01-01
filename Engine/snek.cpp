@@ -108,6 +108,10 @@ void snake::SnakeInput(Keyboard& kbd)
 
 void snake::CheckCollidingWithWall(Graphics & gfx)
 {
+	if (((snk[0].loc.x) * 10) <= 0 || ((snk[0].loc.y) * 10) <= 0)
+	{
+		STOPUPDATING = true;
+	}
 	if (((snk[0].loc.x) * 10) + 10 >= gfx.ScreenWidth || ((snk[0].loc.y) * 10) + 10 >= gfx.ScreenHeight)
 	{
 		STOPUPDATING = true;
