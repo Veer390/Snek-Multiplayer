@@ -66,48 +66,77 @@ void snake::SnakeInput(Keyboard& kbd)
 	wbp = inp.input(kbd);
 	if (plyrNo == 1)
 	{
-		if (wbp == numpad8key)
+		if (verticallock == false)
 		{
-			vx = 0;
-			vy = -1;
+			if (wbp == numpad8key)
+			{
+				vx = 0;
+				vy = -1;
+				horizontallock = false;
+				verticallock = true;
+			}
+
+			if (wbp == numpad2key)
+			{
+				vx = 0;
+				vy = 1;
+				horizontallock = false;
+				verticallock = true;
+			}
 		}
-		if (wbp == numpad2key)
+		if (horizontallock == false)
 		{
-			vx = 0;
-			vy = 1;
-		}
-		if (wbp == numpad4key)
-		{
-			vx = -1;
-			vy =  0;
-		}
-		if (wbp == numpad6key)
-		{
-			vx =  1;
-			vy =  0;
+			if (wbp == numpad4key)
+			{
+				vx = -1;
+				vy = 0;
+				horizontallock = true;
+				verticallock = false;
+			}
+			if (wbp == numpad6key)
+			{
+				vx = 1;
+				vy = 0;
+				horizontallock = true;
+				verticallock = false;
+			}
 		}
 	}
 	if (plyrNo == 2)
 	{
-		if (wbp == Wkey)
+		if (verticallock == false)
 		{
-			vx =  0;
-			vy = -1;
+			if (wbp == Wkey)
+			{
+				vx = 0;
+				vy = -1;
+				verticallock = true;
+				horizontallock = false;
+			}
+			if (wbp == Skey)
+			{
+				vx = 0;
+				vy = 1;
+				verticallock = true;
+				horizontallock = false;
+			}
 		}
-		if (wbp == Skey)
+		if (horizontallock == false)
 		{
-			vx =  0;
-			vy =  1;
-		}
-		if (wbp == Akey)
-		{
-			vx = -1;
-			vy =  0;
-		}
-		if (wbp == Dkey)
-		{
-			vx =  1;
-			vy =  0;
+			if (wbp == Akey)
+			{
+				vx = -1;
+				vy = 0;
+				horizontallock = true;
+				verticallock = false;
+			}
+			if (wbp == Dkey)
+			{
+				vx = 1;
+				vy = 0;
+				horizontallock = true;
+				verticallock = false;
+			}
 		}
 	}
 }

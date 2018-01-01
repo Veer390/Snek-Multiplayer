@@ -14,7 +14,7 @@
 class snake
 {
 	board brd;
-	
+	bool horizontallock = false, verticallock = false;
 	SnekCell snk[100];
 	int length = 10;
 	int vx = 1, vy = 0;
