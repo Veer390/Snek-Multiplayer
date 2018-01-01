@@ -7,10 +7,14 @@
 #include "MainWindow.h"
 #include "takeinput.h"
 #include "Eatable.h"
+#include "Score.h"
+
+
 
 class snake
 {
 	board brd;
+	ScoreSetter score=ScoreSetter(plyrNo);
 	SnekCell snk[100];
 	int length = 10;
 	int vx = 1, vy = 0;
@@ -31,6 +35,7 @@ public:
 	void CheckCollidingWithWall(Graphics& gfx);
 	void CheckIfEating(SnekEats& eats);
 	void checkcollisionwithself();
+	void DrawScoreForPlayer(Graphics& gfx);
 	
 	
 	

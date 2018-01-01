@@ -8,6 +8,7 @@ class board
 {
 public:
 	void GridToPixelDraw(vector vec, Graphics& gfx,Color c);
+	void ScoreToPixelDraw(vector vec, Graphics& gfx, Color c);
 
 
 };

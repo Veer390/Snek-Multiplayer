@@ -1,8 +1,9 @@
 #include "snek.h"
 
+
 snake::snake(int PlayerNumber)
+	:plyrNo(PlayerNumber)
 {
-	plyrNo = PlayerNumber;
 	snk[0].colour = { 255,0,255 };
 	int i;
 	for ( i = 1; i < 100; i++)
@@ -47,6 +48,7 @@ void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats)
 {
 	if (STOPUPDATING == false)
 	{
+		DrawScoreForPlayer(gfx);
 		SnakeInput(kbd);
 		MoveSnake();
 		DrawSnake(gfx);
@@ -125,6 +127,7 @@ void snake::CheckIfEating(SnekEats & eats)
 {
 	if (eats.SnekEating(snk[0].loc))
 	{
+		score.IncrementScore();
 		length++;
 		eats.NextLocation();
 	}
@@ -140,6 +143,11 @@ void snake::checkcollisionwithself()
 			STOPUPDATING = true;
 		}
 	}
+}
+
+void snake::DrawScoreForPlayer(Graphics & gfx)
+{
+	score.DrawScore(gfx);
 }
 
 

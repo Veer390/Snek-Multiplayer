@@ -26,5 +26,6 @@ void Game::UpdateModel()
 void Game::ComposeFrame()
 {
 	eats.DrawSnekEats(gfx);
+	//brd.ScoreToPixelDraw({ 1,2 }, gfx, { 255,255,255 });
 
 }

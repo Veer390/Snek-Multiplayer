@@ -24,6 +24,7 @@ private:
 private:
 	MainWindow& wnd;
 	Graphics gfx;
+	board brd;
 	/********************************/
 	/*  User Variables              */
 
