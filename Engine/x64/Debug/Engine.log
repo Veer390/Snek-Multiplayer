@@ -1,9 +1,2 @@
-﻿  Game.cpp
-  Main.cpp
-  MainWindow.cpp
-  snek.cpp
-c:\users\sriveer redline\source\repos\snek-multiplayer\engine\chiliwin.h(4): warning C4005: '_WIN32_WINNT': macro redefinition (compiling source file snek.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\sdkddkver.h(215): note: see previous definition of '_WIN32_WINNT' (compiling source file snek.cpp)
-c:\users\sriveer redline\source\repos\snek-multiplayer\engine\chiliwin.h(44): warning C4005: 'STRICT': macro redefinition (compiling source file snek.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\minwindef.h(23): note: see previous definition of 'STRICT' (compiling source file snek.cpp)
+﻿  Score.cpp
   Engine.vcxproj -> C:\Users\Sriveer RedLine\Source\Repos\Snek-Multiplayer\x64\Debug\Engine.exe

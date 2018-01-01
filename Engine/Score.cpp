@@ -44,6 +44,14 @@ void ScoreSetter::DrawScore(Graphics & gfx)
 			brd.ScoreToPixelDraw({ i + 1,2 }, gfx, colour);
 		}
 	}
+	if (PlayerNumber == 2)
+	{
+		int i;
+		for (i = 0; i < ScorePrime; i++)
+		{
+			brd.ScoreToPixelDraw({ 79 - i,2 }, gfx, colour);
+		}
+	}
 }
 
 
