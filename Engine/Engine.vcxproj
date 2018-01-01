@@ -148,6 +148,7 @@
     <ClInclude Include="MainWindow.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="Score.h" />
     <ClInclude Include="SnakeCell.h" />
     <ClInclude Include="snek.h" />
     <ClInclude Include="takeinput.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="Mouse.cpp" />
+    <ClCompile Include="Score.cpp" />
     <ClCompile Include="SnakeCell.cpp" />
     <ClCompile Include="snek.cpp" />
     <ClCompile Include="takeinput.cpp" />

@@ -16,10 +16,10 @@ class snake
 	int vx = 1, vy = 0;
 	int plyrNo;
 	Input inp;
-	int SnakeUpdateTimer = 5, SnakeRealTimer = 0;
+	int SnakeUpdateTimer = 5, SnakeRealTimer = 5;
 	bool STOPUPDATING = false;
 	int Score = 0;
-	
+	bool start = false;
 
 public:
 	snake(int PlayerNumber);
@@ -30,6 +30,7 @@ public:
 	void SnakeInput(Keyboard& kbd);
 	void CheckCollidingWithWall(Graphics& gfx);
 	void CheckIfEating(SnekEats& eats);
+	void checkcollisionwithself();
 	
 	
 	

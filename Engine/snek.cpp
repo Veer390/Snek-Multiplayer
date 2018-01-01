@@ -22,14 +22,15 @@ void snake::MoveSnake()
 	SnakeRealTimer++;
 	if (SnakeRealTimer >= SnakeUpdateTimer)
 	{
-		snk[0].loc.x = snk[0].loc.x + vx;
-		snk[0].loc.y = snk[0].loc.y + vy;
-		SnakeRealTimer = 0;
-		for (i = length - 1; i > 0; i--)
+		for (i = length - 1; i >0; i--)
 		{
 			snk[i].loc.x = snk[i - 1].loc.x;
 			snk[i].loc.y = snk[i - 1].loc.y;
 		}
+		snk[0].loc.x = snk[0].loc.x + vx;
+		snk[0].loc.y = snk[0].loc.y + vy;
+		SnakeRealTimer = 0;
+		
 	}
 }
 
@@ -49,8 +50,10 @@ void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats)
 		SnakeInput(kbd);
 		MoveSnake();
 		DrawSnake(gfx);
+		checkcollisionwithself();
 		CheckCollidingWithWall(gfx);
 		CheckIfEating(eats);
+		
 	}
 }
 
@@ -124,6 +127,18 @@ void snake::CheckIfEating(SnekEats & eats)
 	{
 		length++;
 		eats.NextLocation();
+	}
+}
+
+void snake::checkcollisionwithself()
+{
+	int i;
+	for (i = 1; i < length; i++)
+	{
+		if (snk[0].loc.x == snk[i].loc.x && snk[0].loc.y == snk[i].loc.y)
+		{
+			STOPUPDATING = true;
+		}
 	}
 }
 
