@@ -11,7 +11,7 @@ class snake
 {
 	board brd;
 	SnekCell snk[100];
-	int length = 3;
+	int length = 10;
 	int vx = 1, vy = 0;
 	int plyrNo;
 	Input inp;

@@ -19,11 +19,11 @@ void snake::MoveSnake()
 		snk[0].loc.x = snk[0].loc.x + vx;
 		snk[0].loc.y = snk[0].loc.y + vy;
 		SnakeRealTimer = 0;
-	}
-	for (i = length-1; i > 0; i--)
-	{
-		snk[i].loc.x = snk[i - 1].loc.x;
-		snk[i].loc.y = snk[i - 1].loc.y;
+		for (i = length - 1; i > 0; i--)
+		{
+			snk[i].loc.x = snk[i - 1].loc.x;
+			snk[i].loc.y = snk[i - 1].loc.y;
+		}
 	}
 }
 
