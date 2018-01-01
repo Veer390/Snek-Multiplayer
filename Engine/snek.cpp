@@ -42,7 +42,7 @@ void snake::DrawSnake(Graphics& gfx)
 	}
 }
 
-void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd)
+void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats)
 {
 	if (STOPUPDATING == false)
 	{
@@ -50,6 +50,7 @@ void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd)
 		MoveSnake();
 		DrawSnake(gfx);
 		CheckCollidingWithWall(gfx);
+		CheckIfEating(eats);
 	}
 }
 
@@ -110,6 +111,15 @@ void snake::CheckCollidingWithWall(Graphics & gfx)
 	if (((snk[0].loc.x) * 10) + 10 >= gfx.ScreenWidth || ((snk[0].loc.y) * 10) + 10 >= gfx.ScreenHeight)
 	{
 		STOPUPDATING = true;
+	}
+}
+
+void snake::CheckIfEating(SnekEats & eats)
+{
+	if (eats.SnekEating(snk[0].loc))
+	{
+		length++;
+		eats.NextLocation();
 	}
 }
 

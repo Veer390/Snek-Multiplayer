@@ -63,6 +63,9 @@
     <ClInclude Include="takeinput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Eatable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DXErr.cpp">
@@ -96,6 +99,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SnakeCell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Eatable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

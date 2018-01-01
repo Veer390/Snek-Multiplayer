@@ -6,6 +6,7 @@
 #include "Graphics.h"
 #include "MainWindow.h"
 #include "takeinput.h"
+#include "Eatable.h"
 
 class snake
 {
@@ -17,6 +18,7 @@ class snake
 	Input inp;
 	int SnakeUpdateTimer = 5, SnakeRealTimer = 0;
 	bool STOPUPDATING = false;
+	int Score = 0;
 	
 
 public:
@@ -24,9 +26,10 @@ public:
 	//~snake();
 	void MoveSnake();
 	void DrawSnake(Graphics& gfx);
-	void UpdateSnake(Graphics& gfx, Keyboard& kbd);
+	void UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats);
 	void SnakeInput(Keyboard& kbd);
 	void CheckCollidingWithWall(Graphics& gfx);
+	void CheckIfEating(SnekEats& eats);
 	
 	
 	

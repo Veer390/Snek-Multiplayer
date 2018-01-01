@@ -18,13 +18,13 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
-	snk.UpdateSnake(gfx,wnd.kbd);
-	snk2.UpdateSnake(gfx, wnd.kbd);
+	snk.UpdateSnake(gfx,wnd.kbd,eats);
+	snk2.UpdateSnake(gfx, wnd.kbd,eats);
 	
 }
 
 void Game::ComposeFrame()
 {
-	
+	eats.DrawSnekEats(gfx);
 
 }

@@ -4,6 +4,7 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "Snek.h"
+#include "Eatable.h"
 
 class Game
 {
@@ -27,6 +28,7 @@ private:
 	/*  User Variables              */
 
 	snake snk = snake(1), snk2 = snake(2);
+	SnekEats eats = SnekEats({ 10,8 });    //starting location for collectible can be randomized
 
 	/********************************/
 };
