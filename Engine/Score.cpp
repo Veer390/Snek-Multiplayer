@@ -1,6 +1,8 @@
 #include "Score.h"
 
 ScoreSetter::ScoreSetter(int PlyrNumber)
+	:
+	PlayerNumber(PlyrNumber)
 {
 	if (PlyrNumber == 1)
 	{
@@ -34,7 +36,7 @@ void ScoreSetter::DecrementSetScore(int val_to_set_secore_to)
 
 void ScoreSetter::DrawScore(Graphics & gfx)
 {
-	//if (PlayerNumber == 1)
+	if (PlayerNumber == 1)
 	{
 		int i;
 		for (i = 0; i < ScorePrime; i++)

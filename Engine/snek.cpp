@@ -4,6 +4,7 @@
 snake::snake(int PlayerNumber)
 	:plyrNo(PlayerNumber)
 {
+	//score.PlayerNumber = PlayerNumber;
 	snk[0].colour = { 255,0,255 };
 	int i;
 	for ( i = 1; i < 100; i++)

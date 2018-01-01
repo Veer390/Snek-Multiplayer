@@ -1,7 +1,6 @@
 ﻿  Game.cpp
   Main.cpp
   MainWindow.cpp
-  Score.cpp
   snek.cpp
 c:\users\sriveer redline\source\repos\snek-multiplayer\engine\chiliwin.h(4): warning C4005: '_WIN32_WINNT': macro redefinition (compiling source file snek.cpp)
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\sdkddkver.h(215): note: see previous definition of '_WIN32_WINNT' (compiling source file snek.cpp)

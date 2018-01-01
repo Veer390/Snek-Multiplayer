@@ -4,12 +4,13 @@
 class ScoreSetter
 {
 private:
-	Color colour = { 255,255,255 };
+	Color colour;
     int ScorePrime = 0;
-	int PlayerNumber;
+	
 	board brd;
 
 public:
+	int PlayerNumber;
 	ScoreSetter(int PlyrNumber);
 	void IncrementScore();
 	void DecrementScore();

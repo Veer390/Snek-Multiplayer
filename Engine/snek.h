@@ -14,7 +14,7 @@
 class snake
 {
 	board brd;
-	ScoreSetter score=ScoreSetter(plyrNo);
+	
 	SnekCell snk[100];
 	int length = 10;
 	int vx = 1, vy = 0;
@@ -24,6 +24,7 @@ class snake
 	bool STOPUPDATING = false;
 	int Score = 0;
 	bool start = false;
+	ScoreSetter score = ScoreSetter(plyrNo);
 
 public:
 	snake(int PlayerNumber);
