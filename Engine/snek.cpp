@@ -3,6 +3,12 @@
 snake::snake(int PlayerNumber)
 {
 	plyrNo = PlayerNumber;
+	snk[0].colour = { 255,0,255 };
+	int i;
+	for ( i = 1; i < 100; i++)
+	{
+		snk[i].colour = { 255,255,255 };
+	}
 }
 
 /*snake::~snake()
@@ -32,16 +38,19 @@ void snake::DrawSnake(Graphics& gfx)
 	int i;
 	for (i = 0; i < length; i++)
 	{
-		brd.GridToPixelDraw(snk[i].loc, gfx, { 255,255,255 });
+		brd.GridToPixelDraw(snk[i].loc, gfx, snk[i].colour);
 	}
 }
 
 void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd)
 {
-	
-  SnakeInput(kbd);
-  MoveSnake();
-  DrawSnake(gfx);
+	if (STOPUPDATING == false)
+	{
+		SnakeInput(kbd);
+		MoveSnake();
+		DrawSnake(gfx);
+		CheckCollidingWithWall(gfx);
+	}
 }
 
 void snake::SnakeInput(Keyboard& kbd)
@@ -93,6 +102,14 @@ void snake::SnakeInput(Keyboard& kbd)
 			vx =  1;
 			vy =  0;
 		}
+	}
+}
+
+void snake::CheckCollidingWithWall(Graphics & gfx)
+{
+	if (((snk[0].loc.x) * 10) + 10 >= gfx.ScreenWidth || ((snk[0].loc.y) * 10) + 10 >= gfx.ScreenHeight)
+	{
+		STOPUPDATING = true;
 	}
 }
 

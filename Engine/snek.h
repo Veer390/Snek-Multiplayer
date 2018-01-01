@@ -16,6 +16,7 @@ class snake
 	int plyrNo;
 	Input inp;
 	int SnakeUpdateTimer = 5, SnakeRealTimer = 0;
+	bool STOPUPDATING = false;
 	
 
 public:
@@ -25,6 +26,7 @@ public:
 	void DrawSnake(Graphics& gfx);
 	void UpdateSnake(Graphics& gfx, Keyboard& kbd);
 	void SnakeInput(Keyboard& kbd);
+	void CheckCollidingWithWall(Graphics& gfx);
 	
 	
 	
