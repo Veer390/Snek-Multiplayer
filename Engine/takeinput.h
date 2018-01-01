@@ -5,15 +5,15 @@
 
 enum WhichButtonPressed
 {
-	plyr1UP = 1,
-	plyr1Down = 2,
-	plyr1Right = 3,
-	plyr1Left = 4,
-	plyr2UP = 11,
-	plyr2Down = 12,
-	plyr2Right = 13,
-	plyr2Left = 14,
-	NOKEYPRESSED = 0,
+	numpad8key=1,
+	numpad2key=2,
+	numpad6key=3,
+	numpad4key=4,
+	Wkey=11,
+	Skey=12,
+	Akey=13,
+	Dkey=14,
+	SED = 0,
 
 };
 
@@ -21,8 +21,8 @@ enum WhichButtonPressed
 class Input
 {
 public:
-	WhichButtonPressed player1input(Keyboard& kbd);
-	WhichButtonPressed player2input(Keyboard& kbd);
+	WhichButtonPressed input(Keyboard& kbd);
+	
 	
 
 		

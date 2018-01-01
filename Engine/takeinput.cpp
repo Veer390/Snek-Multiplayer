@@ -2,55 +2,43 @@
 
 
 
-WhichButtonPressed Input::player1input(Keyboard& kbd)
+WhichButtonPressed Input::input(Keyboard& kbd)
 {
-	WhichButtonPressed wbp;
-	if (kbd.KeyIsPressed(0x38))
+	WhichButtonPressed Button;
+	if (kbd.KeyIsPressed(0x68))
 	{
-		wbp = plyr1UP;
+		Button = numpad8key;
 	}
-	else if (kbd.KeyIsPressed(0x32))
+	else if (kbd.KeyIsPressed(0x62))
 	{
-		wbp = plyr1Down;
+		Button = numpad2key;
 	}
-	else if (kbd.KeyIsPressed(0x34))
+	else if (kbd.KeyIsPressed(0x66))
 	{
-		wbp = plyr1Left;
+		Button = numpad6key;
 	}
-	else if (kbd.KeyIsPressed(0x36))
+	else if (kbd.KeyIsPressed(0x64))
 	{
-		wbp = plyr1Right;
-	}
-	else
-	{
-		wbp = NOKEYPRESSED;
-	}
-	return wbp;
-}
-
-WhichButtonPressed Input::player2input(Keyboard & kbd)
-{
-	WhichButtonPressed wbp;
-	if (kbd.KeyIsPressed(0x44))
-	{
-		wbp = plyr2Right;
-	}
-	else if (kbd.KeyIsPressed(0x41))
-	{
-		wbp = plyr2Left;
+		Button = numpad4key;
 	}
 	else if (kbd.KeyIsPressed(0x57))
 	{
-		wbp = plyr2UP;
+		Button = Wkey;
 	}
 	else if (kbd.KeyIsPressed(0x53))
 	{
-		wbp = plyr2Down;
+		Button = Skey;
 	}
-	else
+	else if (kbd.KeyIsPressed(0x41))
 	{
-		wbp = NOKEYPRESSED;
+		Button = Akey;
 	}
-	return wbp;
-	
+	else if (kbd.KeyIsPressed(0x44))
+	{
+		Button = Dkey;
+	}
+	else Button = SED;
+	return Button;
 }
+
+

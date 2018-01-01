@@ -46,54 +46,52 @@ void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd)
 
 void snake::SnakeInput(Keyboard& kbd)
 {
+	WhichButtonPressed wbp;
+	wbp = inp.input(kbd);
 	if (plyrNo == 1)
 	{
-		WhichButtonPressed wbp;
-		wbp = inp.player1input(kbd);
-		if (wbp == plyr1UP)
+		if (wbp == numpad8key)
 		{
+			vx = 0;
 			vy = -1;
-			vx = 0;
 		}
-		if (wbp == plyr1Down)
+		if (wbp == numpad2key)
 		{
+			vx = 0;
 			vy = 1;
-			vx = 0;
 		}
-		if (wbp == plyr1Right)
+		if (wbp == numpad4key)
 		{
-			vy = 0;
-			vx = 1;
-		}
-		if (wbp == plyr1Left)
-		{
-			vy = 0;
 			vx = -1;
+			vy =  0;
+		}
+		if (wbp == numpad6key)
+		{
+			vx =  1;
+			vy =  0;
 		}
 	}
 	if (plyrNo == 2)
 	{
-		WhichButtonPressed wbp;
-		wbp = inp.player2input(kbd);
-		if (wbp == plyr2UP)
+		if (wbp == Wkey)
 		{
+			vx =  0;
 			vy = -1;
-			vx = 0;
 		}
-		if (wbp == plyr2Down)
+		if (wbp == Skey)
 		{
-			vy = 1;
-			vx = 0;
+			vx =  0;
+			vy =  1;
 		}
-		if (wbp == plyr2Right)
+		if (wbp == Akey)
 		{
-			vy = 0;
-			vx = 1;
-		}
-		if (wbp == plyr2Left)
-		{
-			vy = 0;
 			vx = -1;
+			vy =  0;
+		}
+		if (wbp == Dkey)
+		{
+			vx =  1;
+			vy =  0;
 		}
 	}
 }
