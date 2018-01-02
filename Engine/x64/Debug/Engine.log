@@ -1,7 +1,18 @@
-﻿  Game.cpp
+﻿  compilation header save succeeded; see C:\Users\Sriveer RedLine\source\repos\Snek-Multiplayer\Engine\FramebufferPS.shh
+  compilation header save succeeded; see C:\Users\Sriveer RedLine\source\repos\Snek-Multiplayer\Engine\FramebufferVS.shh
+  board.cpp
+  DXErr.cpp
+  Eatable.cpp
+  Game.cpp
+  Graphics.cpp
+  Keyboard.cpp
   Main.cpp
   MainWindow.cpp
+  Mouse.cpp
+  Score.cpp
+  SnakeCell.cpp
   snek.cpp
+  takeinput.cpp
 c:\users\sriveer redline\source\repos\snek-multiplayer\engine\chiliwin.h(4): warning C4005: '_WIN32_WINNT': macro redefinition (compiling source file snek.cpp)
   c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\sdkddkver.h(215): note: see previous definition of '_WIN32_WINNT' (compiling source file snek.cpp)
 c:\users\sriveer redline\source\repos\snek-multiplayer\engine\chiliwin.h(44): warning C4005: 'STRICT': macro redefinition (compiling source file snek.cpp)

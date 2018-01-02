@@ -50,6 +50,7 @@ void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats)
 	if (STOPUPDATING == false)
 	{
 		DrawScoreForPlayer(gfx);
+		ChangeVelocityBasedOnScore();
 		SnakeInput(kbd);
 		MoveSnake();
 		DrawSnake(gfx);
@@ -178,6 +179,26 @@ void snake::checkcollisionwithself()
 void snake::DrawScoreForPlayer(Graphics & gfx)
 {
 	score.DrawScore(gfx);
+}
+
+void snake::ChangeVelocityBasedOnScore()
+{
+	int scr = score.GetScore();
+	if (SnakeUpdateTimer > 0)
+	{
+		if (scr % 4 != 0)
+		{
+			CanChangeVelocity = true;
+		}
+		if (scr % 4 == 0)
+		{
+			if (CanChangeVelocity == true)
+			{
+				SnakeUpdateTimer--;
+				CanChangeVelocity = false;
+			}
+		}
+	}
 }
 
 

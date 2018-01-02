@@ -54,4 +54,9 @@ void ScoreSetter::DrawScore(Graphics & gfx)
 	}
 }
 
+int ScoreSetter::GetScore()
+{
+	return ScorePrime;
+}
+
 

@@ -25,6 +25,9 @@ class snake
 	int Score = 0;
 	bool start = false;
 	ScoreSetter score = ScoreSetter(plyrNo);
+	bool CanChangeVelocity = true;
+
+
 
 public:
 	snake(int PlayerNumber);
@@ -37,6 +40,7 @@ public:
 	void CheckIfEating(SnekEats& eats);
 	void checkcollisionwithself();
 	void DrawScoreForPlayer(Graphics& gfx);
+	void ChangeVelocityBasedOnScore();
 	
 	
 	
