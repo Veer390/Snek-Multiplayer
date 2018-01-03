@@ -8,6 +8,7 @@
 #include "takeinput.h"
 #include "Eatable.h"
 #include "Score.h"
+#include "DesbuggerSnekClass.h"
 
 
 
@@ -20,12 +21,15 @@ class snake
 	int vx = 1, vy = 0;
 	int plyrNo;
 	Input inp;
-	int SnakeUpdateTimer = 5, SnakeRealTimer = 5;
+	float SnakeUpdateTimer = 5, SnakeRealTimer = 5;
 	bool STOPUPDATING = false;
 	int Score = 0;
 	bool start = false;
 	ScoreSetter score = ScoreSetter(plyrNo);
 	bool CanChangeVelocity = true;
+	DebugSNEk Ds;
+	
+	void CheckDebug(Keyboard& kbd);
 
 
 

@@ -1,6 +1,18 @@
 #include "snek.h"
 
 
+void snake::CheckDebug(Keyboard& kbd)
+{
+	WhichButtonPressed wbp;
+	wbp = inp.input(kbd);
+	if (wbp == SpaceBar)
+	{
+		int s = score.GetScore();
+		Ds.IncreaseScoreAndLength(s, length);
+		score.SetScore(s);
+	}
+}
+
 snake::snake(int PlayerNumber)
 	:plyrNo(PlayerNumber)
 {
@@ -21,7 +33,7 @@ snake::snake(int PlayerNumber)
 void snake::MoveSnake()
 {
 	int i;
-	SnakeRealTimer++;
+	SnakeRealTimer=SnakeRealTimer+0.5;
 	if (SnakeRealTimer >= SnakeUpdateTimer)
 	{
 		for (i = length - 1; i >0; i--)
@@ -45,13 +57,14 @@ void snake::DrawSnake(Graphics& gfx)
 	}
 }
 
-void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats)
+void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats)  //ALMOST MAIN FUNCTION OF SNAKE MUST ACCESS THIS FROM CONTROL
 {
 	if (STOPUPDATING == false)
 	{
 		DrawScoreForPlayer(gfx);
 		ChangeVelocityBasedOnScore();
 		SnakeInput(kbd);
+		CheckDebug(kbd);
 		MoveSnake();
 		DrawSnake(gfx);
 		checkcollisionwithself();
@@ -194,7 +207,7 @@ void snake::ChangeVelocityBasedOnScore()
 		{
 			if (CanChangeVelocity == true)
 			{
-				SnakeUpdateTimer--;
+				SnakeUpdateTimer=SnakeUpdateTimer-0.5;
 				CanChangeVelocity = false;
 			}
 		}

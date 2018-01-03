@@ -37,6 +37,10 @@ WhichButtonPressed Input::input(Keyboard& kbd)
 	{
 		Button = Dkey;
 	}
+	else if (kbd.KeyIsPressed(0x20))
+	{
+		Button = SpaceBar;
+	}
 	else Button = SED;
 	return Button;
 }
