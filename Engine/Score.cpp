@@ -59,4 +59,14 @@ int ScoreSetter::GetScore()
 	return ScorePrime;
 }
 
+int * ScoreSetter::GetScorePointer()
+{
+	return &ScorePrime;
+}
+
+void ScoreSetter::SetScore(int newscore)
+{
+	ScorePrime = newscore;
+}
+
 

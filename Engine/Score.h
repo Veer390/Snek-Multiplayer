@@ -17,4 +17,6 @@ public:
 	void DecrementSetScore(int val_to_set_secore_to);
 	void DrawScore(Graphics& gfx);
 	int GetScore();
+	int* GetScorePointer();
+	void SetScore(int newscore);
 };

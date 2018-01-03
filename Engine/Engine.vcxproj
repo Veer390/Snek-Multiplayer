@@ -140,6 +140,7 @@
     <ClInclude Include="ChiliException.h" />
     <ClInclude Include="ChiliWin.h" />
     <ClInclude Include="Colors.h" />
+    <ClInclude Include="DesbuggerSnekClass.h" />
     <ClInclude Include="DXErr.h" />
     <ClInclude Include="Eatable.h" />
     <ClInclude Include="Game.h" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="board.cpp" />
+    <ClCompile Include="DesbuggerSnekClass.cpp" />
     <ClCompile Include="DXErr.cpp" />
     <ClCompile Include="Eatable.cpp" />
     <ClCompile Include="Game.cpp" />
