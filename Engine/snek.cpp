@@ -13,8 +13,43 @@ void snake::CheckDebug(Keyboard& kbd)
 	}
 }
 
-snake::snake(int PlayerNumber)
-	:plyrNo(PlayerNumber)
+void snake::SetSnakeToMoveUP()
+{
+	vx = 0;
+	vy = -1;
+	horizontallock = false;
+	verticallock = true;
+}
+
+void snake::SetSnakeToMoveDown()
+{
+	vx = 0;
+	vy = 1;
+	horizontallock = false;
+	verticallock = true;
+}
+
+void snake::SetSnakeToMoveLeft()
+{
+	vx = -1;
+	vy = 0;
+	horizontallock = true;
+	verticallock = false;
+}
+
+void snake::SetSnakeToMoveRight()
+{
+	vx = 1;
+	vy = 0;
+	horizontallock = true;
+	verticallock = false;
+}
+
+
+
+snake::snake(int PlayerNumber,bool AiActivate)
+	:plyrNo(PlayerNumber),
+	 AiIsActive(AiActivate)
 {
 	//score.PlayerNumber = PlayerNumber;
 	snk[0].colour = { 255,0,255 };
@@ -57,102 +92,86 @@ void snake::DrawSnake(Graphics& gfx)
 	}
 }
 
-void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats)  //ALMOST MAIN FUNCTION OF SNAKE MUST ACCESS THIS FROM CONTROL
+void snake::UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats)  //MAIN FUNCTION OF SNAKE MUST ACCESS THIS To CONTROL
 {
-	if (STOPUPDATING == false)
-	{
-		DrawScoreForPlayer(gfx);
-		ChangeVelocityBasedOnScore();
-		SnakeInput(kbd);
-		CheckDebug(kbd);
-		MoveSnake();
-		DrawSnake(gfx);
-		checkcollisionwithself();
-		CheckCollidingWithWall(gfx);
-		CheckIfEating(eats);
-		
-	}
+	    if (STOPUPDATING == false)
+		{
+			
+			DrawScoreForPlayer(gfx);
+			ChangeVelocityBasedOnScore();
+			if (AiIsActive == false)
+			{
+				SnakeInputPlayerControl(kbd);
+			}
+			CheckDebug(kbd);
+			MoveSnake();
+			DrawSnake(gfx);
+			checkcollisionwithself();
+			CheckCollidingWithWall(gfx);
+			CheckIfEating(eats);
+
+		}
+	
 }
 
-void snake::SnakeInput(Keyboard& kbd)
+void snake::SnakeInputPlayerControl(Keyboard& kbd)
 {
 	WhichButtonPressed wbp;
 	wbp = inp.input(kbd);
-	if (plyrNo == 1)
-	{
-		if (verticallock == false)
+	
+		if (plyrNo == 1)
 		{
-			if (wbp == numpad8key)
+			if (verticallock == false)
 			{
-				vx = 0;
-				vy = -1;
-				horizontallock = false;
-				verticallock = true;
-			}
+				if (wbp == numpad8key)
+				{
+					SetSnakeToMoveUP();
+				}
 
-			if (wbp == numpad2key)
+				if (wbp == numpad2key)
+				{
+					SetSnakeToMoveDown();
+				}
+			}
+			if (horizontallock == false)
 			{
-				vx = 0;
-				vy = 1;
-				horizontallock = false;
-				verticallock = true;
+				if (wbp == numpad4key)
+				{
+					SetSnakeToMoveLeft();
+				}
+				if (wbp == numpad6key)
+				{
+					SetSnakeToMoveRight();
+				}
 			}
 		}
-		if (horizontallock == false)
+		if (plyrNo == 2)
 		{
-			if (wbp == numpad4key)
+			if (verticallock == false)
 			{
-				vx = -1;
-				vy = 0;
-				horizontallock = true;
-				verticallock = false;
+				if (wbp == Wkey)
+				{
+					SetSnakeToMoveUP();
+				}
+				if (wbp == Skey)
+				{
+					SetSnakeToMoveDown();
+				}
 			}
-			if (wbp == numpad6key)
+			if (horizontallock == false)
 			{
-				vx = 1;
-				vy = 0;
-				horizontallock = true;
-				verticallock = false;
-			}
-		}
-	}
-	if (plyrNo == 2)
-	{
-		if (verticallock == false)
-		{
-			if (wbp == Wkey)
-			{
-				vx = 0;
-				vy = -1;
-				verticallock = true;
-				horizontallock = false;
-			}
-			if (wbp == Skey)
-			{
-				vx = 0;
-				vy = 1;
-				verticallock = true;
-				horizontallock = false;
+				if (wbp == Akey)
+				{
+					SetSnakeToMoveLeft();
+				}
+				if (wbp == Dkey)
+				{
+					SetSnakeToMoveRight();
+				}
 			}
 		}
-		if (horizontallock == false)
-		{
-			if (wbp == Akey)
-			{
-				vx = -1;
-				vy = 0;
-				horizontallock = true;
-				verticallock = false;
-			}
-			if (wbp == Dkey)
-			{
-				vx = 1;
-				vy = 0;
-				horizontallock = true;
-				verticallock = false;
-			}
-		}
-	}
+	
+	
 }
 
 void snake::CheckCollidingWithWall(Graphics & gfx)

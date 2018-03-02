@@ -28,7 +28,7 @@ private:
 	/********************************/
 	/*  User Variables              */
 
-	snake snk = snake(1), snk2 = snake(2);
+	snake snk = snake(1,false), snk2 = snake(2,true);
 	SnekEats eats = SnekEats({ 10,8 });    //starting location for collectible can be randomized
 
 	/********************************/

@@ -1,13 +1,4 @@
-﻿  DesbuggerSnekClass.cpp
-  Game.cpp
-  Main.cpp
-  MainWindow.cpp
-  Score.cpp
-  snek.cpp
-c:\users\veer empyrean\source\repos\snek-multiplayer\engine\chiliwin.h(4): warning C4005: '_WIN32_WINNT': macro redefinition (compiling source file snek.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\sdkddkver.h(215): note: see previous definition of '_WIN32_WINNT' (compiling source file snek.cpp)
-c:\users\veer empyrean\source\repos\snek-multiplayer\engine\chiliwin.h(44): warning C4005: 'STRICT': macro redefinition (compiling source file snek.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.16299.0\shared\minwindef.h(23): note: see previous definition of 'STRICT' (compiling source file snek.cpp)
-c:\users\veer empyrean\source\repos\snek-multiplayer\engine\snek.cpp(36): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\veer empyrean\source\repos\snek-multiplayer\engine\snek.cpp(210): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Engine.vcxproj -> C:\Users\Veer Empyrean\Source\Repos\Snek-Multiplayer\x64\Debug\Engine.exe
+﻿  Ai++.cpp
+c:\users\srive\source\repos\snek-multiplayer\engine\ai++.cpp(6): warning C4101: 'i': unreferenced local variable
+c:\users\srive\source\repos\snek-multiplayer\engine\ai++.cpp(7): warning C4700: uninitialized local variable 'd' used
+  Engine.vcxproj -> C:\Users\srive\source\repos\Snek-Multiplayer\x64\Debug\Engine.exe

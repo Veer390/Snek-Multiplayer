@@ -9,11 +9,13 @@
 #include "Eatable.h"
 #include "Score.h"
 #include "DesbuggerSnekClass.h"
+#include "Ai++.h"
 
 
 
 class snake
 {
+	Ai AIComp;
 	board brd;
 	bool horizontallock = false, verticallock = false;
 	SnekCell snk[100];
@@ -28,18 +30,26 @@ class snake
 	ScoreSetter score = ScoreSetter(plyrNo);
 	bool CanChangeVelocity = true;
 	DebugSNEk Ds;
+	bool AiIsActive;
 	
 	void CheckDebug(Keyboard& kbd);
 
 
 
+private:
+	
+	void SetSnakeToMoveUP();   /*plays  with  Vx And Vy Values To Achieve Results.... All 4 Functions*/
+	void SetSnakeToMoveDown();
+	void SetSnakeToMoveLeft();
+	void SetSnakeToMoveRight();
+
 public:
-	snake(int PlayerNumber);
+	snake(int PlayerNumber,bool AiActivate);
 	//~snake();
 	void MoveSnake();
 	void DrawSnake(Graphics& gfx);
 	void UpdateSnake(Graphics& gfx, Keyboard& kbd,SnekEats& eats);
-	void SnakeInput(Keyboard& kbd);
+	void SnakeInputPlayerControl(Keyboard& kbd);
 	void CheckCollidingWithWall(Graphics& gfx);
 	void CheckIfEating(SnekEats& eats);
 	void checkcollisionwithself();
@@ -47,5 +57,6 @@ public:
 	void ChangeVelocityBasedOnScore();
 	
 	
+	friend class Ai;
 	
 };
